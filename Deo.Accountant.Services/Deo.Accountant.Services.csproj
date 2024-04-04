@@ -22,6 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Deo.Mutiyat.Repository.CRUD\Deo.Mutiyat.Repository.CRUD\Deo.Mutiyat.Repository.CRUD.csproj" />
+    <ProjectReference Include="..\..\Deo.Provider\Deo.Provider\Deo.Provider.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Deo.Mutiyat.Bookkeeping">
       <HintPath>..\..\Deo.Mutiyat.Bookkeeping\Deo.Mutiyat.Bookkeeping\bin\Debug\net8.0\Deo.Mutiyat.Bookkeeping.dll</HintPath>
     </Reference>
@@ -30,6 +35,9 @@
     </Reference>
     <Reference Include="Deo.Mutiyat.Model.Base.Primal">
       <HintPath>..\..\Deo.Mutiyat.Model.Base.Primal\Deo.Mutiyat.Model.Base.Primal\bin\Debug\net8.0\Deo.Mutiyat.Model.Base.Primal.dll</HintPath>
+    </Reference>
+    <Reference Include="Deo.Mutiyat.Model.Company">
+      <HintPath>..\..\Deo.Mutiyat.Model.Company\Deo.Mutiyat.Model.Company\bin\Debug\net8.0\Deo.Mutiyat.Model.Company.dll</HintPath>
     </Reference>
   </ItemGroup>
 
