@@ -1,8 +1,11 @@
-﻿using Deo.Accountant.Services.Model;
+﻿
+using Deo.Accountant.Services.Common;
+using Deo.Accountant.Services.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+ 
 using System.Text;
 
 namespace Deo.Accountant.Services.Controllers.Authentication
@@ -11,33 +14,38 @@ namespace Deo.Accountant.Services.Controllers.Authentication
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        [HttpPost("login")]
-        public IActionResult Login([FromBody] Login user)
+
+        public readonly Deo.Provider.AllyCompany db;
+        public AuthenticationController(Deo.Provider.AllyCompany data)
         {
-            if (user is null)
-            {
-                return BadRequest("Invalid user request!!!");
-            }
-            if (user.UserName == "Jaydeep" && user.Password == "Pass@777")
-            {
-                var secretKey = new
-                    SymmetricSecurityKey(
-                    Encoding.UTF8.GetBytes(ConfigurationManager.AppSetting["JWT:Secret"]));
-
-                var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
-                var tokeOptions = new
-                    JwtSecurityToken(issuer: ConfigurationManager.AppSetting["JWT:ValidIssuer"],
-                    audience: ConfigurationManager.AppSetting["JWT:ValidAudience"],
-                    claims: new List<Claim>(), expires: DateTime.Now.AddMinutes(6),
-                    signingCredentials: signinCredentials);
-
-                var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
-                return Ok(new JWTTokenResponse
-                {
-                    Token = tokenString
-                });
-            }
-            return Unauthorized();
+            db = data;
         }
+
+
+        [HttpPost("Login")]
+        public TokenResponse Login([FromBody] Deo.Mutiyat.Model.User.User users)
+        {
+            if (!db.Users.Any(x => x.Name == users.Name && x.Password == users.Password))
+            {
+                return null;
+            }
+
+            // Else we generate JSON Web Token
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var tokenKey = Encoding.UTF8.GetBytes(DeoConfigurationManager.AppSetting["JWT:Secret"]);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+              {
+             new Claim(ClaimTypes.Name, users.Name)
+              }),
+                Expires = DateTime.UtcNow.AddHours(8),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return new TokenResponse { Token = tokenHandler.WriteToken(token) };
+
+        }
+ 
     }
 }
