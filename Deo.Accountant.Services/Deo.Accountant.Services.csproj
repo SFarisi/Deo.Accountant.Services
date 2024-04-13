@@ -1,47 +1,47 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-	  <PlatformTarget>x64</PlatformTarget>
-	  <SignAssembly>True</SignAssembly>
-	  <AssemblyOriginatorKeyFile>D:\OneDrive\Documents\Demircioglu.snk</AssemblyOriginatorKeyFile>
-	  <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-Deo.Accountant.Services-cdf71760-d9a4-4150-b1dc-88c8ab1a60c7</UserSecretsId>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<PlatformTarget>x64</PlatformTarget>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>D:\OneDrive\Documents\Demircioglu.snk</AssemblyOriginatorKeyFile>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>aspnet-Deo.Accountant.Services-cdf71760-d9a4-4150-b1dc-88c8ab1a60c7</UserSecretsId>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="ChilkatDnCore" Version="9.50.98" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.3" NoWarn="NU1605" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.3" NoWarn="NU1605" />
-    <PackageReference Include="Microsoft.AspNetCore.Hosting.WindowsServices" Version="8.0.3" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="8.0.0" />
-    <PackageReference Include="Microsoft.Identity.Web" Version="2.17.4" />
-    <PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="2.17.4" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="ChilkatDnCore" Version="9.50.98.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.4" NoWarn="NU1605" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.4" NoWarn="NU1605" />
+		<PackageReference Include="Microsoft.AspNetCore.Hosting.WindowsServices" Version="8.0.4" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Identity.Web" Version="2.17.4" />
+		<PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="2.17.4" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Deo.Mutiyat.Repository.CRUD\Deo.Mutiyat.Repository.CRUD\Deo.Mutiyat.Repository.CRUD.csproj" />
-    <ProjectReference Include="..\..\Deo.Provider\Deo.Provider\Deo.Provider.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\Deo.Mutiyat.Repository.CRUD\Deo.Mutiyat.Repository.CRUD\Deo.Mutiyat.Repository.CRUD.csproj" />
+		<ProjectReference Include="..\..\Deo.Provider\Deo.Provider\Deo.Provider.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Deo.Mutiyat.Bookkeeping">
-      <HintPath>..\..\Deo.Mutiyat.Bookkeeping\Deo.Mutiyat.Bookkeeping\bin\Debug\net8.0\Deo.Mutiyat.Bookkeeping.dll</HintPath>
-    </Reference>
-    <Reference Include="Deo.Mutiyat.Makarr">
-      <HintPath>..\..\Deo.Mutiyat.Makarr\Deo.Mutiyat.Makarr\bin\Debug\net8.0\Deo.Mutiyat.Makarr.dll</HintPath>
-    </Reference>
-    <Reference Include="Deo.Mutiyat.Model.Base.Primal">
-      <HintPath>..\..\Deo.Mutiyat.Model.Base.Primal\Deo.Mutiyat.Model.Base.Primal\bin\Debug\net8.0\Deo.Mutiyat.Model.Base.Primal.dll</HintPath>
-    </Reference>
-    <Reference Include="Deo.Mutiyat.Model.Company">
-      <HintPath>..\..\Deo.Mutiyat.Model.Company\Deo.Mutiyat.Model.Company\bin\Debug\net8.0\Deo.Mutiyat.Model.Company.dll</HintPath>
-    </Reference>
-    <Reference Include="Deo.Mutiyat.Model.User">
-      <HintPath>..\..\Deo.Mutiyat.Model.User\Deo.Mutiyat.Model.User\bin\Debug\net8.0\Deo.Mutiyat.Model.User.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+	<ItemGroup>
+		<Reference Include="Deo.Mutiyat.Bookkeeping">
+			<HintPath>..\..\Deo.Mutiyat.Bookkeeping\Deo.Mutiyat.Bookkeeping\bin\Debug\net8.0\Deo.Mutiyat.Bookkeeping.dll</HintPath>
+		</Reference>
+		<Reference Include="Deo.Mutiyat.Makarr">
+			<HintPath>..\..\Deo.Mutiyat.Makarr\Deo.Mutiyat.Makarr\bin\Debug\net8.0\Deo.Mutiyat.Makarr.dll</HintPath>
+		</Reference>
+		<Reference Include="Deo.Mutiyat.Model.Base.Primal">
+			<HintPath>..\..\Deo.Mutiyat.Model.Base.Primal\Deo.Mutiyat.Model.Base.Primal\bin\Debug\net8.0\Deo.Mutiyat.Model.Base.Primal.dll</HintPath>
+		</Reference>
+		<Reference Include="Deo.Mutiyat.Model.Company">
+			<HintPath>..\..\Deo.Mutiyat.Model.Company\Deo.Mutiyat.Model.Company\bin\Debug\net8.0\Deo.Mutiyat.Model.Company.dll</HintPath>
+		</Reference>
+		<Reference Include="Deo.Mutiyat.Model.User">
+			<HintPath>..\..\Deo.Mutiyat.Model.User\Deo.Mutiyat.Model.User\bin\Debug\net8.0\Deo.Mutiyat.Model.User.dll</HintPath>
+		</Reference>
+	</ItemGroup>
 
 </Project>
