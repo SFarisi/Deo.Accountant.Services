@@ -16,8 +16,8 @@
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.4" NoWarn="NU1605" />
 		<PackageReference Include="Microsoft.AspNetCore.Hosting.WindowsServices" Version="8.0.4" />
 		<PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="8.0.0" />
-		<PackageReference Include="Microsoft.Identity.Web" Version="2.17.4" />
-		<PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="2.17.4" />
+		<PackageReference Include="Microsoft.Identity.Web" Version="2.17.5" />
+		<PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="2.17.5" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 	</ItemGroup>
 
@@ -35,6 +35,9 @@
 		</Reference>
 		<Reference Include="Deo.Mutiyat.Model.Base.Primal">
 			<HintPath>..\..\Deo.Mutiyat.Model.Base.Primal\Deo.Mutiyat.Model.Base.Primal\bin\Debug\net8.0\Deo.Mutiyat.Model.Base.Primal.dll</HintPath>
+		</Reference>
+		<Reference Include="Deo.Mutiyat.Model.Branch">
+		  <HintPath>..\..\Deo.Mutiyat.Model.Branch\Deo.Mutiyat.Model.Branch\bin\Debug\net8.0\Deo.Mutiyat.Model.Branch.dll</HintPath>
 		</Reference>
 		<Reference Include="Deo.Mutiyat.Model.Company">
 			<HintPath>..\..\Deo.Mutiyat.Model.Company\Deo.Mutiyat.Model.Company\bin\Debug\net8.0\Deo.Mutiyat.Model.Company.dll</HintPath>

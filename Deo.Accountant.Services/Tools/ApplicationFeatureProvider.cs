@@ -10,19 +10,22 @@ namespace Deo.Accountant.Services.Tools;
 
 public class GenericTypeControllerFeatureProvider : IApplicationFeatureProvider<ControllerFeature>
 {
-    private string[] Assemblies { get; } = 
+    private string[] BookkeepingAssemblies { get; } =
         new[] { "Deo.Mutiyat.Model.Bookkeeping" };
+
+    private string[] MakarrAssemblies { get; } =
+    new[] { "Deo.Mutiyat.Model.Company", "Deo.Mutiyat.Model.User", "Deo.Mutiyat.Model.Branch" };
 
     public GenericTypeControllerFeatureProvider()
     {
-        
+
     }
 
     public void PopulateFeature(IEnumerable<ApplicationPart> parts, ControllerFeature feature)
     {
-        foreach (var assembly in this.Assemblies)
+        foreach (var assembly in this.BookkeepingAssemblies)
         {
-            var loadedAssembly = Assembly.Load("Deo.Mutiyat.Model.Bookkeeping");
+            var loadedAssembly = Assembly.Load(assembly);
             var customClasses = loadedAssembly.GetExportedTypes();
 
             foreach (var candidate in customClasses)
@@ -40,8 +43,10 @@ public class GenericTypeControllerFeatureProvider : IApplicationFeatureProvider<
                 feature.Controllers.Add(typeInfo);
 
             }
-
-            var companyAssembly = Assembly.Load("Deo.Mutiyat.Model.Company");
+        }
+        foreach (var assembly in this.MakarrAssemblies)
+        {
+            var companyAssembly = Assembly.Load(assembly);
             var compayClass = companyAssembly.GetExportedTypes();
 
             foreach (var candidate in compayClass)
@@ -60,5 +65,6 @@ public class GenericTypeControllerFeatureProvider : IApplicationFeatureProvider<
 
             }
         }
+
     }
 }

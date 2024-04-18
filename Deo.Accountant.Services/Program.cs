@@ -37,6 +37,7 @@ namespace Deo.Accountant.Services
             .ConfigureApplicationPartManager(m =>
             m.FeatureProviders.Add(new GenericTypeControllerFeatureProvider()));
 
+
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
