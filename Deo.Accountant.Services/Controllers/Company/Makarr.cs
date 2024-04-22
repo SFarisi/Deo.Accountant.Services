@@ -11,6 +11,7 @@ namespace Deo.Accountant.Services.Controllers.Company
         public Makarr(Deo.Provider.AllyCompany data)
         {
             db = data;
+            
         }
 
         [HttpGet]

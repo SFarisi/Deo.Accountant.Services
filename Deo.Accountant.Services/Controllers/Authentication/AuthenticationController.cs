@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Deo.Accountant.Services.Controllers.Authentication
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class AuthenticationController : ControllerBase
     {

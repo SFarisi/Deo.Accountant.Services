@@ -45,6 +45,9 @@
 		<Reference Include="Deo.Mutiyat.Model.User">
 			<HintPath>..\..\Deo.Mutiyat.Model.User\Deo.Mutiyat.Model.User\bin\Debug\net8.0\Deo.Mutiyat.Model.User.dll</HintPath>
 		</Reference>
+		<Reference Include="Deo.Mutiyat.Model.User.Template">
+		  <HintPath>..\..\Deo.Mutiyat.Model.User.Template\Deo.Mutiyat.Model.User.Template\bin\Debug\net8.0\Deo.Mutiyat.Model.User.Template.dll</HintPath>
+		</Reference>
 	</ItemGroup>
 
 </Project>

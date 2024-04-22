@@ -14,7 +14,7 @@ public class GenericTypeControllerFeatureProvider : IApplicationFeatureProvider<
         new[] { "Deo.Mutiyat.Model.Bookkeeping" };
 
     private string[] MakarrAssemblies { get; } =
-    new[] { "Deo.Mutiyat.Model.Company", "Deo.Mutiyat.Model.User", "Deo.Mutiyat.Model.Branch" };
+    new[] { "Deo.Mutiyat.Model.Company", "Deo.Mutiyat.Model.User", "Deo.Mutiyat.Model.Branch" , "Deo.Mutiyat.Model.User.Template" };
 
     public GenericTypeControllerFeatureProvider()
     {
